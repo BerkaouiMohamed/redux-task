@@ -1,0 +1,27 @@
+{
+  "products": [
+    {
+      "id": "c19d",
+      "title": "hello",
+      "price": "1233545"
+    },
+    {
+      "id": "d577",
+      "title": "keybord",
+      "price": "10000"
+    },
+    {
+      "id": "15ec",
+      "title": "mouse gaming",
+      "price": "5000"
+    }
+   
+  ],
+  "cake": [
+    {
+      "title": "borwnis",
+      "price": "100",
+      "id": "4777"
+    }
+  ]
+}
