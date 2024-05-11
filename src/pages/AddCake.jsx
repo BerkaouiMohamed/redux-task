@@ -1,10 +1,9 @@
 import React, { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addProduct } from "../redux/productActions";
 import { toast } from "react-toastify";
-import axios from "axios";
+import { addCake } from "../redux/cake/cakeActions";
 
-function AddProduct() {
+function AddCake() {
     const dispatch=useDispatch()
     const [product,setProuct]=useState({})
     const ref=useRef(null)
@@ -17,15 +16,10 @@ function AddProduct() {
     }
 const hundleAdd=(e)=>{
     e.preventDefault()
-    
-    axios.post('http://localhost:3000/products',product).then((res)=>{
-      dispatch(addProduct(res.data))
-    })
-
+    dispatch(addCake(product))
     ref.current[0].value=""
     ref.current[1].value=""
     toast('product added')
-
 
 
 }
@@ -42,4 +36,4 @@ const hundleAdd=(e)=>{
   );
 }
 
-export default AddProduct;
+export default AddCake;

@@ -2,17 +2,13 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { editProduct } from "../redux/productActions";
-import axios from "axios";
 
-function EditProduct() {
+function EditCake() {
   const dispatch =useDispatch()
     const handleUpdate =(e)=>{
       e.preventDefault()
-      console.log(product)
-       axios.put('http://localhost:3000/products/'+id,productState).then((res)=>{
-        dispatch(editProduct(productState))
-    }); 
-  }
+      dispatch(editProduct(productState))
+    }
     const handleChange =(e)=>{
 
           
@@ -26,7 +22,7 @@ function EditProduct() {
 
      const {id} =useParams()
 
-     const product=useSelector((state)=>state.products.find((ele)=>ele.id===id))
+     const product=useSelector((state)=>state.cake.find((ele)=>ele.id===id))
      const [productState,SetProductState]=useState(product)
   return (
    
@@ -43,4 +39,4 @@ function EditProduct() {
   );
 }
 
-export default EditProduct;
+export default EditCake;

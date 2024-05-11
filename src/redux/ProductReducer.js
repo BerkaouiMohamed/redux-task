@@ -1,16 +1,13 @@
-import { ADDPRODUCT, DELETEPRODUCT, EDITPRODUCT } from "./actionTypes"
+import { ADDPRODUCT, DELETEPRODUCT, EDITPRODUCT, FETCHPRODUCTS } from "./actionTypes"
 
 
 
-const initailState = [{
-    id: "15ec",
-    title: "mouse gaming",
-    price: "5000"
-}]
+const initailState = [{}]
 
 const ProductReducer = (state = initailState, action) => {
     switch (action.type) {
-        case ADDPRODUCT: return [...state, { ...action.payload, id: Math.random().toString() }]
+        case FETCHPRODUCTS :return [...action.payload]
+        case ADDPRODUCT: return [...state, action.payload ]
         case DELETEPRODUCT: return state.filter((product) => product.id != action.payload.id)
         case EDITPRODUCT: return state.map(product => product.id == action.payload.id ? { ...product, ...action.payload }:product)
         default: return state
